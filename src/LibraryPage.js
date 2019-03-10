@@ -49,6 +49,15 @@ class LibraryPage extends Component {
     );
   }
 
+  componentWillMount() {
+    console.log('???????????????????????????????',qs.parse(this.props.location.hash)['#access_token']);
+    if(qs.parse(this.props.location.hash)['#access_token']===undefined) {
+
+    } else {
+      APIManager.setToken(qs.parse(this.props.location.hash)['#access_token']);
+    }
+  }
+
   handleMenuClick(e, {name}) {
     let APIUrl = '';
     for (let i = 0; i < 8; i++) {

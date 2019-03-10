@@ -23,7 +23,7 @@ class SideMenu extends Component {
       <Menu pointing fluid vertical secondary inverted size='massive'>
         <Menu.Item
           as={ Link }
-          to = '/'
+          to = '/rkmp2Test/'
           name='Your Library'
           active={this.state.selectedIndex == 'Your Library'}
           onClick={this.handleClick}
@@ -33,7 +33,7 @@ class SideMenu extends Component {
         </Menu.Item>
         <Menu.Item
           as={ Link }
-          to = '/new'
+          to = '/rkmp2Test/new'
           name='Home'
           active={this.state.selectedIndex == 'Home'}
           onClick={this.handleClick}
@@ -44,7 +44,7 @@ class SideMenu extends Component {
         </Menu.Item>
         <Menu.Item
           as={ Link }
-          to = '/search'
+          to = '/rkmp2Test/search'
           name='Search'
           active={this.state.selectedIndex == 'Search'}
           onClick={this.handleClick}
