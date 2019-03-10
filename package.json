@@ -6,6 +6,7 @@
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.1.4",
     "axios": "^0.18.0",
+    "gh-pages": "^2.0.1",
     "moment": "^2.24.0",
     "qs": "^6.6.0",
     "react": "^16.8.3",
@@ -19,6 +20,8 @@
     "semantic-ui-react": "^0.85.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
