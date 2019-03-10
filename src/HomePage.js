@@ -89,7 +89,7 @@ class HomePage extends Component {
         return (acc.concat(input['href']));
       }, []));
     APIManager.setAblumIdx(idx);
-    this.props.history.push('/detail/album');
+    this.props.history.push('/rkmp2Test/detail/album');
 
   }
 
@@ -154,7 +154,7 @@ class HomePage extends Component {
 
   detailViewCallBack(idx) {
     APIManager.setAblumIdx(idx);
-    this.props.history.push('/detail/album');
+    this.props.history.push('/rkmp2Test/detail/album');
 
   }
 

@@ -77,7 +77,7 @@ class LibraryPage extends Component {
     console.log('works!',index);
     APIManager.setPlayList(this.state.responsePlayLists);
     APIManager.setPlayListIndex(index);
-    this.props.history.push('/detail/playlist');
+    this.props.history.push('/rkmp2Test/detail/playlist');
 
   }
 

@@ -40,14 +40,14 @@ class SearchPage extends Component {
     if(force || APIManager.throttleAPI()) {
       console.log('success!',val);
       console.log(this.props.location.pathname);
-      this.props.history.push('/search/?' + encodeURIComponent(val));
+      this.props.history.push('/rkmp2Test/search/?' + encodeURIComponent(val));
       this.setState({searchText: val });
     }
   }
 
   detailViewCallBack(idx) {
     APIManager.setAblumIdx(idx);
-    this.props.history.push('/detail/album');
+    this.props.history.push('/rkmp2Test/detail/album');
 
   }
 
