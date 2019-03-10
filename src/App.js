@@ -43,17 +43,17 @@ class App extends Component {
           <div className="MainViewDiv">
 
             <div className="FillParent">
-              <Route exact path="/" component={LibraryPage}/>
-              <Route path="/OAuthPromise" render={(props) =>< OAuthPage {
+              <Route exact path="/rkmp2Test" component={LibraryPage}/>
+              <Route path="/rkmp2Test/OAuthPromise" render={(props) =>< OAuthPage {
                   ...props
                 }
                 updateToken = {
                   this.updateToken
                 } />}/>
-              <Route path="/search" component={SearchPage}/>
-              <Route path="/new" component={HomePage}/>
-              <Route path="/detail/album" component={DetailPage}/>
-              <Route path="/detail/playlist" component={PlayListDetailPage}/>
+              <Route path="/rkmp2Test/search" component={SearchPage}/>
+              <Route path="/rkmp2Test/new" component={HomePage}/>
+              <Route path="/rkmp2Test/detail/album" component={DetailPage}/>
+              <Route path="/rkmp2Test/detail/playlist" component={PlayListDetailPage}/>
 
             </div>
 

@@ -13,7 +13,7 @@ class LoginButton extends React.Component {
 
   handleClick() {
     this.setState({requestingLogin: true});
-    let redirectURL = 'https://arivval.github.io/OAuthPromise/';
+    let redirectURL = 'https://arivval.github.io/rkmp2Test/OAuthPromise/';
     // window.location = 'https://accounts.spotify.com/authorize?client_id=4ed1e929dd444b11a2a7f9d1d4657fba&response_type=token&redirect_uri=http://localhost:3000/OAuthPromise/';
     window.location = 'https://accounts.spotify.com/authorize?client_id=4ed1e929dd444b11a2a7f9d1d4657fba&response_type=token&redirect_uri=' + redirectURL;
 
