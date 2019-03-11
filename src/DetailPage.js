@@ -37,8 +37,6 @@ class DetailPage extends Component {
   }
 
   componentWillMount() {
-    console.log(APIManager.getAblumIdx());
-    console.log('componentWillMount!');
     this.setState({
       dataList: APIManager.getAblumList(),
       currentIdx: APIManager.getAblumIdx(),
@@ -65,19 +63,16 @@ class DetailPage extends Component {
     this.setState({
       fetched: false,
     });
-    console.log('we need to request ', inputIdx, ' ', APIManager.getAblumList()[inputIdx]);
     axios.get(APIManager.getAblumList()[inputIdx], {
       headers: {
         'Authorization': 'Bearer ' + APIManager.getToken(),
       }
     }).then(res => {
-      console.log('GOOD!', res);
       this.setState({
         responseJSON: res,
         fetched: true,
       })
     }).catch(err => {
-        console.log('BAD!', err);
       }
     );
   }
@@ -226,7 +221,6 @@ class DetailPage extends Component {
                             }
                             timeString = timeString + momentTime.seconds().toString();
 
-                            console.log(timeString);
                             return (
                               <List.Item key={idx} name={idx}>
                                 <List.Content>

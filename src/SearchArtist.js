@@ -21,7 +21,6 @@ class SearchArtist extends Component {
 
 
   componentDidMount() {
-    console.log(this.props.location.search);
   }
 
 

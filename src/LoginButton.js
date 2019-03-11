@@ -22,13 +22,13 @@ class LoginButton extends React.Component {
   render() {
     if (this.state.requestingLogin) {
       return (<div>
-        <Button positive="positive" loading="loading">
+        <Button positive="positive" loading="loading" size="massive">
           Spotify Login
         </Button>
       </div>);
     } else {
       return (<div>
-        <Button positive onClick={this.handleClick}>
+        <Button positive onClick={this.handleClick} size="massive">
           Spotify Login
         </Button>
       </div>);

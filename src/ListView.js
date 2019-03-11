@@ -36,14 +36,12 @@ class SearchArtist extends Component {
   }
 
   onClickHandler(e, {name}) {
-    console.log('clicked', name);
     this.props.detailViewCallBack(name);
 
   }
 
   searchAPI(inputStr) {
     // doing GET request
-    console.log('APIGET', inputStr);
     axios.get('https://api.spotify.com/v1/search', {
       params: {
         'q': inputStr,
@@ -54,10 +52,8 @@ class SearchArtist extends Component {
         'Authorization': 'Bearer ' + APIManager.getToken(),
       }
     }).then(res => {
-      console.log('GOOD!', res);
       this.setState({responseJSON: res})
     }).catch(err => {
-        console.log('BAD!', err);
       }
     );
   }
@@ -116,14 +112,11 @@ class SearchArtist extends Component {
             </List.Item>);
           } catch (e) {
             // Spotify API sometimes have bug of returning null :/, have to catch it for them
-            console.log(idx, e);
             return (null);
           }
         });
         APIManager.setAblumList(ablumAPIList);
       }
-      console.log(retList);
-      console.log(this.state.responseJSON);
 
       return (
         <List selection divided inverted size='massive'>

@@ -8,12 +8,12 @@ import logo from './logo.svg';
 import HomePage from './HomePage.js';
 import SearchPage from './SearchPage.js';
 import LibraryPage from './LibraryPage.js';
-import OAuthPage from './OAuthPage.js';
 import DetailPage from './DetailPage.js';
 import PlayListDetailPage from './PlayListDetailPage.js';
 import APIManager from './APIManager.js';
 import './Utility.css';
 import './App.css';
+import {Dimmer} from "semantic-ui-react";
 
 // let's get started and refactor stuff
 // we have to do nested routing in order to achieve the best effect
@@ -25,7 +25,6 @@ class App extends Component {
     this.state = {
       token: ''
     };
-    console.log('INIT');
     this.updateToken = this.updateToken.bind(this);
   }
 
@@ -34,6 +33,15 @@ class App extends Component {
   }
 
   render() {
+    if(APIManager.getToken()=='') {
+      return(
+        <Dimmer active>
+          <div className="U_Center U_LargeText">
+            <LoginButton/>
+          </div>
+        </Dimmer>
+      );
+    }
     return (<Router>
       <div className="ContainerDiv">
         <div className="MainViewContainerDiv">
@@ -44,12 +52,6 @@ class App extends Component {
 
             <div className="FillParent">
               <Route exact path="/rkmp2Test" component={LibraryPage}/>
-              <Route path="/rkmp2Test/OAuthPromise" render={(props) =>< OAuthPage {
-                  ...props
-                }
-                updateToken = {
-                  this.updateToken
-                } />}/>
               <Route path="/rkmp2Test/search" component={SearchPage}/>
               <Route path="/rkmp2Test/new" component={HomePage}/>
               <Route path="/rkmp2Test/detail/album" component={DetailPage}/>

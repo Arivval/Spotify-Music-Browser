@@ -33,7 +33,6 @@ class LibraryPage extends Component {
         'Authorization': 'Bearer ' + APIManager.getToken(),
       }
     }).then(res => {
-      console.log('GOOD!', res['data']['categories']['items']);
       try {
         this.setState({
           responseCategory: res['data']['categories']['items'],
@@ -44,13 +43,11 @@ class LibraryPage extends Component {
 
       }
     }).catch(err => {
-        console.log('BAD!', err);
       }
     );
   }
 
   componentWillMount() {
-    console.log('???????????????????????????????',qs.parse(this.props.location.hash)['#access_token']);
     if(qs.parse(this.props.location.hash)['#access_token']===undefined) {
 
     } else {
@@ -66,7 +63,6 @@ class LibraryPage extends Component {
         break
       }
     }
-    console.log(APIUrl);
     this.requestPlayLists(APIUrl);
     this.setState({
       activeMenu: name,
@@ -74,7 +70,6 @@ class LibraryPage extends Component {
   }
 
   handleClick(index) {
-    console.log('works!',index);
     APIManager.setPlayList(this.state.responsePlayLists);
     APIManager.setPlayListIndex(index);
     this.props.history.push('/rkmp2Test/detail/playlist');
@@ -93,12 +88,10 @@ class LibraryPage extends Component {
         'Authorization': 'Bearer ' + APIManager.getToken(),
       }
     }).then(res => {
-      console.log('GOOD!', res);
       this.setState({
         responsePlayLists: res['data']['playlists']['items']
       });
     }).catch(err => {
-        console.log('BAD!', err);
       }
     );
 
@@ -109,11 +102,7 @@ class LibraryPage extends Component {
   render() {
     if (APIManager.getToken() == '') {
       return (
-        <div className="LandingPage">
-          <div className="U_Center">
-            <LoginButton/>
-          </div>
-        </div>
+        null
       );
     } else if (this.state.responseCategory === null || this.state.responseCategory.length == 0) {
       return (
