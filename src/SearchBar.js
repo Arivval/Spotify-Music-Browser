@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
-class SearchBar extends React.Component {
+class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +12,6 @@ class SearchBar extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log('Searching:', this.state.stringEntered);
     // we have to do this or else the page would refresh
     e.preventDefault();
     this.props.searchCallBack(this.state.stringEntered, true);
@@ -24,16 +24,20 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <form onSubmit={this.handleSubmit}>
-        <div className = "ui inverted left icon input large">
-          <input type = "text" placeholder = {this.props.placeholder} onChange={this.handleChange}/>
-          <i className = "search icon"/>
+        <div className="ui inverted left icon input large">
+          <input type="text" placeholder={this.props.placeholder} onChange={this.handleChange}/>
+          <i className="search icon"/>
         </div>
       </form>
     );
   }
 
+}
+
+SearchBar.propTypes = {
+  searchCallBack: PropTypes.func.isRequired,
 }
 
 export default SearchBar;

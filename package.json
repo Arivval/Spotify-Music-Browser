@@ -5,9 +5,13 @@
   "private": true,
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "awesome-debounce-promise": "^2.1.0",
     "axios": "^0.18.0",
+    "debounce": "^1.2.0",
     "gh-pages": "^2.0.1",
     "moment": "^2.24.0",
+    "node-sass": "^4.11.0",
+    "prop-types": "^15.7.2",
     "qs": "^6.6.0",
     "react": "^16.8.3",
     "react-cookie": "^3.0.8",

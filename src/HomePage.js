@@ -2,13 +2,12 @@ import React, {Component} from 'react';
 import SearchBar from './SearchBar.js';
 import 'semantic-ui-css/semantic.min.css'
 import {Image, Dropdown} from 'semantic-ui-react';
-import './App.css';
-import './Utility.css';
+import './App.scss';
+import './Utility.scss';
 import APIManager from './APIManager.js';
 import axios from 'axios';
-
-import {BrowserRouter as Router, Route} from "react-router-dom";
 import {List} from "semantic-ui-react";
+import PropTypes from 'prop-types';
 
 
 // let's get started and refactor stuff
@@ -54,7 +53,6 @@ class HomePage extends Component {
   }
 
   onClickHandler(idx) {
-    console.log('clicked', idx);
     APIManager.setAblumList(
       this.state.JSON.filter(input => {
         return (
@@ -108,7 +106,6 @@ class HomePage extends Component {
         'Authorization': 'Bearer ' + APIManager.getToken(),
       }
     }).then(res => {
-      console.log('GOOD!', res);
       this.setState({
         JSON: res['data']['albums']['items'],
       });
@@ -121,7 +118,6 @@ class HomePage extends Component {
           'Authorization': 'Bearer ' + APIManager.getToken(),
         }
       }).then(res1 => {
-        console.log('GOOD!', res1);
         this.setState({
           JSON: this.state.JSON.concat(res1['data']['albums']['items']),
           doneRequesting: true,
@@ -165,7 +161,6 @@ class HomePage extends Component {
         </div>
       );
     } else {
-      console.log(this.state.JSON);
       let retList = this.state.JSON.filter(input => {
         return (
           input['name'].toUpperCase().includes(this.state.searchText.toUpperCase()) ||
@@ -270,6 +265,10 @@ class HomePage extends Component {
       );
     }
   }
+}
+
+HomePage.propTypes = {
+  history: PropTypes.object,
 }
 
 export default HomePage;

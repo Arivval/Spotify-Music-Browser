@@ -1,3 +1,13 @@
+@mixin U_TextMaker($font-size) {
+  color: darkgray;
+  font-size: $font-size;
+  display: inline-block;
+  line-height: $font-size;
+  text-align: center;
+  width: 100%;
+}
+
+
 .U_Center {
   position: absolute;
   top: 50%;
@@ -13,13 +23,7 @@
 }
 
 .U_LargeText {
-  color: darkgray;
-  font-size: 42px;
-  display: inline-block;
-  line-height: 42px;
-  text-align: center;
-  width: 100%;
-
+  @include U_TextMaker(42px);
 }
 
 .TruncateDiv {

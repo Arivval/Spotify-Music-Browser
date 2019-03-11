@@ -1,19 +1,46 @@
 import React, {Component} from 'react';
 import 'semantic-ui-css/semantic.min.css'
-import { List, Image } from 'semantic-ui-react';
-import './App.css';
-import './Utility.css';
+import {List, Image} from 'semantic-ui-react';
+import './App.scss';
+import './Utility.scss';
 import APIManager from './APIManager.js';
 import axios from 'axios';
+import AwesomeDebouncePromise from 'awesome-debounce-promise';
+import PropTypes from 'prop-types';
+
 
 // now we got to request the API in our list view
 
+// we need to have a debouncer so we are not requesting too much stuff from the backend
+const timeDelay = 120;
+const APICallFunctor = async (input) => {
+  return await axios.get('https://api.spotify.com/v1/search', {
+    params: {
+      'q': input,
+      'type': 'album',
+      'limit': 50,
+    },
+    headers: {
+      'Authorization': 'Bearer ' + APIManager.getToken(),
+    }
+  }).then(res => {
+    return res;
+    // this.setState({responseJSON: res})
+  }).catch(err => {
+
+      return null;
+    }
+  );
+};
+const debouncer = AwesomeDebouncePromise(APICallFunctor, timeDelay);
 
 class SearchArtist extends Component {
   constructor(props) {
     super(props);
     this.searchAPI = this.searchAPI.bind(this);
     this.onClickHandler = this.onClickHandler.bind(this);
+    this.asyncHelper = this.asyncHelper.bind(this);
+
     this.state = {
       responseJSON: null,
     };
@@ -21,13 +48,22 @@ class SearchArtist extends Component {
 
 
   componentDidMount() {
-    this.searchAPI(this.props.input);
+    this.asyncHelper(this.props.input);
+
+  }
+
+  asyncHelper = async (input) => {
+    const updated = await debouncer(input);
+    if (updated !== null) {
+      this.setState({
+        responseJSON: updated
+      });
+    }
   }
 
 
   componentWillReceiveProps(nextProps, nextContext) {
-    this.searchAPI(nextProps.input);
-
+    this.asyncHelper(nextProps.input);
   }
 
   onClickHandler(e, {name}) {
@@ -60,7 +96,6 @@ class SearchArtist extends Component {
     } else {
 
       let retList = null;
-
       if (this.state.responseJSON['data']['albums']['items'].length == 0) {
         retList = <List.Item>
           <List.Content>
@@ -120,6 +155,11 @@ class SearchArtist extends Component {
       );
     }
   }
+}
+
+SearchArtist.propTypes = {
+  detailViewCallBack: PropTypes.func.isRequired,
+  input: PropTypes.string.isRequired,
 }
 
 

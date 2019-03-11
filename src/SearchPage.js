@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import SearchBar from './SearchBar.js';
-import './App.css';
-import './Utility.css';
+import './App.scss';
+import './Utility.scss';
 import APIManager from './APIManager.js';
 import ListView from './ListView.js';
+import PropTypes from 'prop-types';
+
 
 // let's get started and refactor stuff
 // we have to do nested routing in order to achieve the best effect
@@ -24,12 +26,10 @@ class SearchPage extends Component {
   }
 
   // if force is false, we need to throttle the API call
-  searchCallBack(val,force) {
-    if(force || APIManager.throttleAPI()) {
-      console.log('success!',val);
-      console.log(this.props.location.pathname);
+  searchCallBack(val, force) {
+    if (force || APIManager.throttleAPI()) {
       this.props.history.push('/rkmp2Test/search/?' + encodeURIComponent(val));
-      this.setState({searchText: val });
+      this.setState({searchText: val});
     }
   }
 
@@ -40,7 +40,7 @@ class SearchPage extends Component {
   }
 
   render() {
-    if(this.state.searchText == '') {
+    if (this.state.searchText == '') {
       return (
         <div className="LandingPage">
           <div className="StickyNavBar">
@@ -60,12 +60,16 @@ class SearchPage extends Component {
             <SearchBar searchCallBack={this.searchCallBack}/>
           </div>
           <div className="SearchResultPage">
-              <ListView input={ this.state.searchText } detailViewCallBack={this.detailViewCallBack}/>
+            <ListView input={this.state.searchText} detailViewCallBack={this.detailViewCallBack}/>
           </div>
         </div>
       );
     }
   }
+}
+
+SearchPage.propTypes = {
+  history: PropTypes.object,
 }
 
 export default SearchPage;

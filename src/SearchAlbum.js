@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import 'semantic-ui-css/semantic.min.css'
-import './App.css';
-import './Utility.css';
-
+import './App.scss';
+import './Utility.scss';
 
 
 // let's get started and refactor stuff

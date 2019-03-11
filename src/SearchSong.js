@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
-import './Utility.css';
+import React, {Component} from 'react';
+import './App.scss';
+import './Utility.scss';
 
 // let's get started and refactor stuff
 // we have to do nested routing in order to achieve the best effect

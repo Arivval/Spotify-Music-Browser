@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import LoginButton from './LoginButton.js';
 import SideMenu from './SideMenu.js';
 import 'semantic-ui-css/semantic.min.css'
@@ -8,9 +8,8 @@ import SearchPage from './SearchPage.js';
 import LibraryPage from './LibraryPage.js';
 import DetailPage from './DetailPage.js';
 import PlayListDetailPage from './PlayListDetailPage.js';
-import APIManager from './APIManager.js';
-import './Utility.css';
-import './App.css';
+import './Utility.scss';
+import './App.scss';
 import {Dimmer} from "semantic-ui-react";
 
 // let's get started and refactor stuff
@@ -31,42 +30,42 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.token == '') {
+    if (this.state.token === '') {
       return (
-          <Router>
-            <div className="ContainerDiv">
-              <Dimmer active>
-                <div className="U_Center U_LargeText">
-                  <LoginButton/>
-                </div>
-              </Dimmer>
-              <div className="MainViewContainerDiv">
-                <div className="SideMenuDiv">
-                  <SideMenu/>
-                </div>
-                <div className="MainViewDiv">
-
-                  <div className="FillParent">
-                    {/*<Route exact path="/rkmp2Test" component={LibraryPage}/>*/}
-                    <Route exact path="/rkmp2Test" render={(props) =>
-                      < LibraryPage {
-                                      ...props
-                                    }
-                                    updateToken={
-                                      this.updateToken
-                                    }/>}/>
-                    <Route path="/rkmp2Test/search" component={SearchPage}/>
-                    <Route path="/rkmp2Test/new" component={HomePage}/>
-                    <Route path="/rkmp2Test/detail/album" component={DetailPage}/>
-                    <Route path="/rkmp2Test/detail/playlist" component={PlayListDetailPage}/>
-
-                  </div>
-
-                </div>
+        <Router>
+          <div className="ContainerDiv">
+            <Dimmer active>
+              <div className="U_Center U_LargeText">
+                <LoginButton/>
               </div>
-              <div className="ToolBarDiv"></div>
+            </Dimmer>
+            <div className="MainViewContainerDiv">
+              <div className="SideMenuDiv">
+                <SideMenu/>
+              </div>
+              <div className="MainViewDiv">
+
+                <div className="FillParent">
+                  {/*<Route exact path="/rkmp2Test" component={LibraryPage}/>*/}
+                  <Route exact path="/rkmp2Test" render={(props) =>
+                    < LibraryPage {
+                                    ...props
+                                  }
+                                  updateToken={
+                                    this.updateToken
+                                  }/>}/>
+                  <Route path="/rkmp2Test/search" component={SearchPage}/>
+                  <Route path="/rkmp2Test/new" component={HomePage}/>
+                  <Route path="/rkmp2Test/detail/album" component={DetailPage}/>
+                  <Route path="/rkmp2Test/detail/playlist" component={PlayListDetailPage}/>
+
+                </div>
+
+              </div>
             </div>
-          </Router>);
+            <div className="ToolBarDiv"></div>
+          </div>
+        </Router>);
     }
     return (<Router>
       <div className="ContainerDiv">
@@ -80,11 +79,11 @@ class App extends Component {
               {/*<Route exact path="/rkmp2Test" component={LibraryPage}/>*/}
               <Route exact path="/rkmp2Test" render={(props) =>
                 < LibraryPage {
-                              ...props
-                            }
-                            updateToken={
-                              this.updateToken
-                            }/>}/>
+                                ...props
+                              }
+                              updateToken={
+                                this.updateToken
+                              }/>}/>
               <Route path="/rkmp2Test/search" component={SearchPage}/>
               <Route path="/rkmp2Test/new" component={HomePage}/>
               <Route path="/rkmp2Test/detail/album" component={DetailPage}/>

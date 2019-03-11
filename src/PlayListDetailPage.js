@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import 'semantic-ui-css/semantic.min.css'
 import {Button, Grid, Segment, Image, List} from 'semantic-ui-react';
-import './App.css';
-import './Utility.css';
+import './App.scss';
+import './Utility.scss';
 import APIManager from './APIManager.js';
 import axios from 'axios';
 import moment from 'moment';
@@ -33,22 +33,20 @@ class PlayListDetailPage extends Component {
   }
 
   componentWillMount() {
-    console.log(APIManager.getPlayListIndex());
-    console.log('componentWillMount!');
     this.setState({
       dataList: APIManager.getPlayList(),
       currentIdx: APIManager.getPlayListIndex(),
     });
-    if (APIManager.getPlayList() === null || APIManager.getPlayList().length == 0) {
+    if (APIManager.getPlayList() === null || APIManager.getPlayList().length === 0) {
 
     } else {
       this.requestDetailAPI(APIManager.getPlayListIndex());
-      if (APIManager.getPlayListIndex() == 0) {
+      if (APIManager.getPlayListIndex() === 0) {
         this.setState({
           buttonLeftDisabled: true,
         });
       }
-      if (APIManager.getPlayList().length == APIManager.getPlayListIndex() + 1) {
+      if (APIManager.getPlayList().length === APIManager.getPlayListIndex() + 1) {
         this.setState({
           buttonRightDisabled: true,
         });
@@ -61,13 +59,11 @@ class PlayListDetailPage extends Component {
     this.setState({
       fetched: false,
     });
-    console.log('we need to request ', inputIdx, ' ', APIManager.getPlayList()[inputIdx]);
     axios.get(APIManager.getPlayList()[inputIdx]['tracks']['href'], {
       headers: {
         'Authorization': 'Bearer ' + APIManager.getToken(),
       }
     }).then(res => {
-      console.log('GOOD we got res!', res);
       this.setState({
         infoJSON: APIManager.getPlayList()[inputIdx],
         trackJSON: res,
@@ -82,7 +78,7 @@ class PlayListDetailPage extends Component {
 
   handleNavigateLeft() {
     this.setState({
-      buttonLeftDisabled: this.state.currentIdx == 1,
+      buttonLeftDisabled: this.state.currentIdx === 1,
       buttonRightDisabled: false,
     });
     this.requestDetailAPI(this.state.currentIdx - 1);
@@ -94,7 +90,7 @@ class PlayListDetailPage extends Component {
   handleNavigateRight() {
     this.setState({
       buttonLeftDisabled: false,
-      buttonRightDisabled: this.state.currentIdx + 2 == this.state.dataList.length,
+      buttonRightDisabled: this.state.currentIdx + 2 === this.state.dataList.length,
     });
     this.requestDetailAPI(this.state.currentIdx + 1);
     this.setState({
@@ -104,7 +100,7 @@ class PlayListDetailPage extends Component {
 
 
   render() {
-    if (this.state.dataList === null || this.state.dataList.length == 0) {
+    if (this.state.dataList === null || this.state.dataList.length === 0) {
       return (
         <div className="DetailContainer">
           <div className="DetailNavigator">
@@ -125,7 +121,7 @@ class PlayListDetailPage extends Component {
         </div>
       );
     }
-    if (this.state.fetched == false) {
+    if (this.state.fetched === false) {
       return (
         <div className="DetailContainer">
           <div className="DetailNavigator">
@@ -184,15 +180,15 @@ class PlayListDetailPage extends Component {
                 {this.state.infoJSON['name']}
               </h2>
               <h5 className="DetailDescriptionArtists">
-                { (!this.state.infoJSON['collaborative'])?
-                    ('Presented by ' + this.state.infoJSON['owner']['display_name']):
-                    ('Collaborative Playlist')
+                {(!this.state.infoJSON['collaborative']) ?
+                  ('Presented by ' + this.state.infoJSON['owner']['display_name']) :
+                  ('Collaborative Playlist')
                 }
               </h5>
             </div>
             <div className="DetailListView">
               {
-                (this.state.trackJSON['data']['items'] === null || this.state.trackJSON['data']['items'].length == 0) ?
+                (this.state.trackJSON['data']['items'] === null || this.state.trackJSON['data']['items'].length === 0) ?
                   (
                     <div>
                       Data is corrupted
@@ -204,19 +200,19 @@ class PlayListDetailPage extends Component {
                           try {
                             let momentTime = moment.duration(item['track']['duration_ms']);
                             let timeString = '';
-                            if (momentTime.hours() != 0) {
+                            if (momentTime.hours() !== 0) {
                               timeString = momentTime.hours().toString() + ':'
                             }
-                            if (momentTime.minutes() != 0) {
+                            if (momentTime.minutes() !== 0) {
                               if (momentTime.minutes() < 10 && timeString != '') {
                                 timeString = timeString + 0;
                               }
                               timeString = timeString + momentTime.minutes().toString() + ':'
                             }
-                            if (timeString == '') {
+                            if (timeString === '') {
                               timeString = '0:'
                             }
-                            if (momentTime.seconds() < 10 && timeString != '') {
+                            if (momentTime.seconds() < 10 && timeString !== '') {
                               timeString = timeString + 0;
                             }
                             timeString = timeString + momentTime.seconds().toString();
@@ -229,7 +225,7 @@ class PlayListDetailPage extends Component {
                                   </List.Header>
                                   <div className="TruncateDiv">
                                     {item['track']['artists'].map((artistItem, idx) => {
-                                      if (idx + 1 != item['track']['artists'].length) {
+                                      if (idx + 1 !== item['track']['artists'].length) {
                                         return (artistItem['name'] + ', ');
                                       } else {
                                         return (artistItem['name']);
@@ -241,7 +237,7 @@ class PlayListDetailPage extends Component {
                               </List.Item>
                             );
                           } catch (e) {
-                            console.log(e)
+                            console.log(e);
                             return (null);
                           }
                         })

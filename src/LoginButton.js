@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button} from 'semantic-ui-react';
 
-class LoginButton extends React.Component {
+class LoginButton extends Component {
   constructor(props) {
     super(props);
     this.state = {

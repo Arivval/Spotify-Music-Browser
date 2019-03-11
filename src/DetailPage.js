@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import 'semantic-ui-css/semantic.min.css'
 import {Button, Image, List} from 'semantic-ui-react';
-import './App.css';
-import './Utility.css';
+import './App.scss';
+import './Utility.scss';
 import APIManager from './APIManager.js';
 import axios from 'axios';
 import moment from 'moment';
@@ -36,16 +36,16 @@ class DetailPage extends Component {
       dataList: APIManager.getAblumList(),
       currentIdx: APIManager.getAblumIdx(),
     });
-    if (APIManager.getAblumList() === null || APIManager.getAblumList().length == 0) {
+    if (APIManager.getAblumList() === null || APIManager.getAblumList().length === 0) {
 
     } else {
       this.requestDetailAPI(APIManager.getAblumIdx());
-      if (APIManager.getAblumIdx() == 0) {
+      if (APIManager.getAblumIdx() === 0) {
         this.setState({
           buttonLeftDisabled: true,
         });
       }
-      if (APIManager.getAblumList().length == APIManager.getAblumIdx() + 1) {
+      if (APIManager.getAblumList().length === APIManager.getAblumIdx() + 1) {
         this.setState({
           buttonRightDisabled: true,
         });
@@ -75,7 +75,7 @@ class DetailPage extends Component {
 
   handleNavigateLeft() {
     this.setState({
-      buttonLeftDisabled: this.state.currentIdx == 1,
+      buttonLeftDisabled: this.state.currentIdx === 1,
       buttonRightDisabled: false,
     });
     this.requestDetailAPI(this.state.currentIdx - 1);
@@ -87,7 +87,7 @@ class DetailPage extends Component {
   handleNavigateRight() {
     this.setState({
       buttonLeftDisabled: false,
-      buttonRightDisabled: this.state.currentIdx + 2 == this.state.dataList.length,
+      buttonRightDisabled: this.state.currentIdx + 2 === this.state.dataList.length,
     });
     this.requestDetailAPI(this.state.currentIdx + 1);
     this.setState({
@@ -97,7 +97,7 @@ class DetailPage extends Component {
 
 
   render() {
-    if (this.state.dataList === null || this.state.dataList.length == 0) {
+    if (this.state.dataList === null || this.state.dataList.length === 0) {
       return (
         <div className="DetailContainer">
           <div className="DetailNavigator">
@@ -118,7 +118,7 @@ class DetailPage extends Component {
         </div>
       );
     }
-    if (this.state.fetched == false) {
+    if (this.state.fetched === false) {
       return (
         <div className="DetailContainer">
           <div className="DetailNavigator">
@@ -152,7 +152,7 @@ class DetailPage extends Component {
           <Image
             src={this.state.responseJSON['data']['images'][0]['url']}
             className="FillParent"
-            />
+          />
         </div>
         <div className="DetailNavigator">
           <div className="LeftNavigatorButtonContainer">
@@ -177,7 +177,7 @@ class DetailPage extends Component {
               </h2>
               <h5 className="DetailDescriptionArtists">
                 {this.state.responseJSON['data']['artists'].map((item, idx) => {
-                  if (idx + 1 != this.state.responseJSON['data']['artists'].length) {
+                  if (idx + 1 !== this.state.responseJSON['data']['artists'].length) {
                     return (item['name'] + ', ');
                   } else {
                     return (item['name']);
@@ -187,7 +187,7 @@ class DetailPage extends Component {
             </div>
             <div className="DetailListView">
               {
-                (this.state.responseJSON['data']['tracks'] === null || this.state.responseJSON['data']['tracks'].length == 0) ?
+                (this.state.responseJSON['data']['tracks'] === null || this.state.responseJSON['data']['tracks'].length === 0) ?
                   (
                     <div>
                       Data is corrupted
@@ -199,19 +199,19 @@ class DetailPage extends Component {
                           try {
                             let momentTime = moment.duration(item['duration_ms']);
                             let timeString = '';
-                            if (momentTime.hours() != 0) {
+                            if (momentTime.hours() !== 0) {
                               timeString = momentTime.hours().toString() + ':'
                             }
-                            if (momentTime.minutes() != 0) {
-                              if (momentTime.minutes() < 10 && timeString != '') {
+                            if (momentTime.minutes() !== 0) {
+                              if (momentTime.minutes() < 10 && timeString !== '') {
                                 timeString = timeString + 0;
                               }
                               timeString = timeString + momentTime.minutes().toString() + ':'
                             }
-                            if (timeString == '') {
+                            if (timeString === '') {
                               timeString = '0:'
                             }
-                            if (momentTime.seconds() < 10 && timeString != '') {
+                            if (momentTime.seconds() < 10 && timeString !== '') {
                               timeString = timeString + 0;
                             }
                             timeString = timeString + momentTime.seconds().toString();
@@ -227,7 +227,7 @@ class DetailPage extends Component {
                               </List.Item>
                             );
                           } catch (e) {
-                            console.log(e)
+                            console.log(e);
                             return (null);
                           }
                         })

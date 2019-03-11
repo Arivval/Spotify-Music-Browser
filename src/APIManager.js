@@ -4,7 +4,7 @@ const throttleTime = 100;
 class APIManager {
 
   constructor() {
-    if(!APIManager.instance) {
+    if (!APIManager.instance) {
       APIManager.instance = this;
     }
     this.APIToken = "";
@@ -76,7 +76,6 @@ class APIManager {
   getPlayListIndex() {
     return this.playListIndex;
   }
-
 
 
 }

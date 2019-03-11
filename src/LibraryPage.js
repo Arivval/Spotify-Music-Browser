@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import 'semantic-ui-css/semantic.min.css'
-import { Dimmer, Loader, Menu, Image} from 'semantic-ui-react';
+import {Dimmer, Loader, Menu, Image} from 'semantic-ui-react';
 import qs from 'qs';
-import './App.css';
+import './App.scss';
 import axios from 'axios';
-import './Utility.css';
+import './Utility.scss';
 import APIManager from './APIManager.js';
+import PropTypes from 'prop-types';
+
 
 // let's get started and refactor stuff
 // we have to do nested routing in order to achieve the best effect
@@ -24,28 +26,35 @@ class LibraryPage extends Component {
   }
 
   componentDidMount() {
-    if(qs.parse(this.props.location.hash)['#access_token']===undefined) {
+    if (qs.parse(this.props.location.hash)['#access_token'] === undefined) {
 
     } else {
       this.props.updateToken(qs.parse(this.props.location.hash)['#access_token']);
       APIManager.setToken(qs.parse(this.props.location.hash)['#access_token']);
     }
-
+    if (APIManager.getToken() === '') {
+      return;
+    }
     axios.get('https://api.spotify.com/v1/browse/categories', {
       headers: {
         'Authorization': 'Bearer ' + APIManager.getToken(),
       }
     }).then(res => {
       try {
+        // whm tag will result a bug, need to filter it
+        const itemList = res['data']['categories']['items'].filter((item) => {
+          return item['id'] !== 'whm'
+        });
         this.setState({
-          responseCategory: res['data']['categories']['items'],
-          activeMenu: res['data']['categories']['items'][0]['name'],
+          responseCategory: itemList,
+          activeMenu: itemList[0]['name'],
         })
         this.requestPlayLists(res['data']['categories']['items'][0]['href']);
       } catch {
 
       }
     }).catch(err => {
+        console.log(err);
       }
     );
   }
@@ -94,9 +103,8 @@ class LibraryPage extends Component {
   }
 
 
-
   render() {
-     if (APIManager.getToken() == '') {
+    if (APIManager.getToken() == '') {
       return (
         null
       );
@@ -126,7 +134,9 @@ class LibraryPage extends Component {
         return (
           <div className="GridDisplayBlock" key={idx}>
             <div className="GridDisplayImageContainer">
-              <div className="GridDisplayImageView" onClick={()=>{this.handleClick(idx)}}>
+              <div className="GridDisplayImageView" onClick={() => {
+                this.handleClick(idx)
+              }}>
                 <Image src={item['images'][0]['url']}/>
               </div>
             </div>
@@ -163,6 +173,11 @@ class LibraryPage extends Component {
       );
     }
   }
+}
+
+LibraryPage.propTypes = {
+  location: PropTypes.object,
+  history: PropTypes.object,
 }
 
 export default LibraryPage;

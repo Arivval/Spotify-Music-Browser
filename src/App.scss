@@ -1,3 +1,14 @@
+$tool-bar-color: rgb(40, 40, 40);
+$side-menu-color: rgb(18, 18, 18);
+$base-color: rgb(24, 24, 24);
+$background-color: #121212;
+$detail-max-width: 1600px;
+/*
+  For SCSS features I used varibales and mixins
+  for mixins I write in Utility.scss
+
+  I also tried some nesting, but I think it is an anti pattern and really not refactor friend (hi cohesion)
+*/
 .App {
   text-align: center;
 }
@@ -9,7 +20,7 @@
 }
 
 .App-header {
-  background-color: #121212;
+  background-color: $background-color;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -37,6 +48,7 @@
   height: 100%;
   width: 100%;
 }
+
 .MainViewContainerDiv {
   background-color: grey;
   flex: 1;
@@ -44,7 +56,7 @@
 }
 
 .ToolBarDiv {
-  background-color: rgb(40,40,40);
+  background-color: $tool-bar-color;
   height: 3px;
   z-index: 2;
 }
@@ -52,14 +64,14 @@
 .SideMenuDiv {
   width: 210px;
   padding-top: 100px;
-  background-color: rgb(18,18,18);
+  background-color: $side-menu-color;
   z-index: 2;
 
 }
 
 .MainViewDiv {
   flex: 1;
-  background-color: rgb(24,24,24);
+  background-color: $base-color;
 
 }
 
@@ -90,7 +102,7 @@
   height: 100%;
   display: inline-block;
   padding-left: 50px;
-  padding-top:100px;
+  padding-top: 100px;
   padding-right: 50px;
   padding-bottom: 30px;
   overflow-y: auto;
@@ -120,6 +132,23 @@
   background-color: transparent;
   z-index: 2;
 
+  .LeftNavigatorButtonContainer {
+    position: absolute;
+    margin-top: 6px;
+    margin-left: 20px;
+    height: auto;
+    width: auto;
+  }
+
+  .RightNavigatorButtonContainer {
+    position: absolute;
+    right: 0;
+    height: auto;
+    width: auto;
+    margin-top: 6px;
+    margin-right: 20px;
+  }
+
 }
 
 .DetailView {
@@ -129,28 +158,10 @@
 
 }
 
-.LeftNavigatorButtonContainer {
-  position: absolute;
-  margin-top: 6px;
-  margin-left: 20px;
-  height: auto;
-  width: auto;
-}
-
-.RightNavigatorButtonContainer {
-  position: absolute;
-  right: 0;
-  height: auto;
-  width: auto;
-  margin-top: 6px;
-  margin-right: 20px;
-}
-
-
 .DetailFlexContainer {
   height: 100%;
   width: 100%;
-  max-width: 1600px;
+  max-width: $detail-max-width;
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -183,7 +194,7 @@
   width: 100%;
   height: 100%;
   left: 5%;
-  background-color: rgb(40,40,40);
+  background-color: rgb(40, 40, 40);
 }
 
 .DetailDescriptionView {
@@ -221,13 +232,12 @@
 }
 
 
-
 .LibraryNavigator {
-  height:auto;
+  height: auto;
   position: relative;
   background-color: transparent;
   z-index: 2;
-  background: linear-gradient(to bottom, rgb(24,24,24), transparent);
+  background: linear-gradient(to bottom, $base-color, transparent);
 }
 
 .LibraryViewContainer {
@@ -281,7 +291,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgb(40,40,40);
+  background-color: $tool-bar-color;
   cursor: pointer;
   transition: 0.4s;
 }
