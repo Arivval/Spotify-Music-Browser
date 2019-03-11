@@ -24,7 +24,13 @@ class LibraryPage extends Component {
   }
 
   componentDidMount() {
-    console.log('here');
+    if(qs.parse(this.props.location.hash)['#access_token']===undefined) {
+
+    } else {
+      this.props.updateToken(qs.parse(this.props.location.hash)['#access_token']);
+      APIManager.setToken(qs.parse(this.props.location.hash)['#access_token']);
+    }
+
     axios.get('https://api.spotify.com/v1/browse/categories', {
       headers: {
         'Authorization': 'Bearer ' + APIManager.getToken(),
@@ -44,15 +50,6 @@ class LibraryPage extends Component {
     );
   }
 
-  componentWillMount() {
-    console.log('enetered!', qs.parse(this.props.location.hash)['#access_token']);
-    if(qs.parse(this.props.location.hash)['#access_token']===undefined) {
-
-    } else {
-      this.props.updateToken(qs.parse(this.props.location.hash)['#access_token']);
-      APIManager.setToken(qs.parse(this.props.location.hash)['#access_token']);
-    }
-  }
 
   handleMenuClick(e, {name}) {
     let APIUrl = '';
