@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/rkmp2Test/static/media/icons.faff9214.woff"
   },
   {
-    "revision": "a71e5294a03a6fc39d3f",
-    "url": "/rkmp2Test/static/css/main.de3287f8.chunk.css"
+    "revision": "42b57ab1b39f4945fb6c",
+    "url": "/rkmp2Test/static/css/main.61fb191e.chunk.css"
   },
   {
     "revision": "6767087c26897f0d1f12",
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/rkmp2Test/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "a71e5294a03a6fc39d3f",
-    "url": "/rkmp2Test/static/js/main.a71e5294.chunk.js"
+    "revision": "42b57ab1b39f4945fb6c",
+    "url": "/rkmp2Test/static/js/main.42b57ab1.chunk.js"
   },
   {
     "revision": "e8c322de9658cbeb8a774b6624167c2c",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/rkmp2Test/static/css/2.3f68a92b.chunk.css"
   },
   {
-    "revision": "21cb6969d7fbef3ec8f50c9e198e3db1",
+    "revision": "ac52220fc858c99b1e704708a2cb1717",
     "url": "/rkmp2Test/index.html"
   }
 ];

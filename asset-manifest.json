@@ -1,16 +1,16 @@
 {
-  "main.css": "/rkmp2Test/static/css/main.de3287f8.chunk.css",
-  "main.js": "/rkmp2Test/static/js/main.a71e5294.chunk.js",
-  "main.js.map": "/rkmp2Test/static/js/main.a71e5294.chunk.js.map",
+  "main.css": "/rkmp2Test/static/css/main.61fb191e.chunk.css",
+  "main.js": "/rkmp2Test/static/js/main.42b57ab1.chunk.js",
+  "main.js.map": "/rkmp2Test/static/js/main.42b57ab1.chunk.js.map",
   "runtime~main.js": "/rkmp2Test/static/js/runtime~main.6767087c.js",
   "runtime~main.js.map": "/rkmp2Test/static/js/runtime~main.6767087c.js.map",
   "static/css/2.3f68a92b.chunk.css": "/rkmp2Test/static/css/2.3f68a92b.chunk.css",
   "static/js/2.49be3079.chunk.js": "/rkmp2Test/static/js/2.49be3079.chunk.js",
   "static/js/2.49be3079.chunk.js.map": "/rkmp2Test/static/js/2.49be3079.chunk.js.map",
   "index.html": "/rkmp2Test/index.html",
-  "precache-manifest.70b0a0f0094012abf5c269fc1a08a06b.js": "/rkmp2Test/precache-manifest.70b0a0f0094012abf5c269fc1a08a06b.js",
+  "precache-manifest.7dba8753cf97c07dc52faac9e8ba1036.js": "/rkmp2Test/precache-manifest.7dba8753cf97c07dc52faac9e8ba1036.js",
   "service-worker.js": "/rkmp2Test/service-worker.js",
   "static/css/2.3f68a92b.chunk.css.map": "/rkmp2Test/static/css/2.3f68a92b.chunk.css.map",
-  "static/css/main.de3287f8.chunk.css.map": "/rkmp2Test/static/css/main.de3287f8.chunk.css.map",
+  "static/css/main.61fb191e.chunk.css.map": "/rkmp2Test/static/css/main.61fb191e.chunk.css.map",
   "static/media/semantic.min.css": "/rkmp2Test/static/media/outline-icons.ef60a4f6.woff"
 }
