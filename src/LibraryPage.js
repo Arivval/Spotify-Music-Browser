@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
-import LoginButton from './LoginButton.js';
-import SearchBar from './SearchBar.js';
 import 'semantic-ui-css/semantic.min.css'
-import {Button, Grid, Dimmer, Loader, Menu, Image} from 'semantic-ui-react';
-import logo from './logo.svg';
+import { Dimmer, Loader, Menu, Image} from 'semantic-ui-react';
 import qs from 'qs';
 import './App.css';
 import axios from 'axios';
 import './Utility.css';
 import APIManager from './APIManager.js';
-import {Link} from "react-router-dom";
 
 // let's get started and refactor stuff
 // we have to do nested routing in order to achieve the best effect
@@ -28,6 +24,7 @@ class LibraryPage extends Component {
   }
 
   componentDidMount() {
+    console.log('here');
     axios.get('https://api.spotify.com/v1/browse/categories', {
       headers: {
         'Authorization': 'Bearer ' + APIManager.getToken(),
@@ -48,9 +45,11 @@ class LibraryPage extends Component {
   }
 
   componentWillMount() {
+    console.log('enetered!', qs.parse(this.props.location.hash)['#access_token']);
     if(qs.parse(this.props.location.hash)['#access_token']===undefined) {
 
     } else {
+      this.props.updateToken(qs.parse(this.props.location.hash)['#access_token']);
       APIManager.setToken(qs.parse(this.props.location.hash)['#access_token']);
     }
   }
@@ -100,7 +99,7 @@ class LibraryPage extends Component {
 
 
   render() {
-    if (APIManager.getToken() == '') {
+     if (APIManager.getToken() == '') {
       return (
         null
       );

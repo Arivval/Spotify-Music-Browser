@@ -1,18 +1,10 @@
 import React, {Component} from 'react';
-import LoginButton from './LoginButton.js';
 import SearchBar from './SearchBar.js';
 import 'semantic-ui-css/semantic.min.css'
-import {Button, Grid, Image, Dropdown} from 'semantic-ui-react';
-import logo from './logo.svg';
-import qs from 'qs';
+import {Image, Dropdown} from 'semantic-ui-react';
 import './App.css';
 import './Utility.css';
 import APIManager from './APIManager.js';
-import SearchMenu from './SearchMenu.js';
-import SearchArtist from './SearchArtist.js';
-import SearchAlbum from './SearchAlbum.js';
-import SearchSong from './SearchSong.js';
-import ListView from './ListView.js';
 import axios from 'axios';
 
 import {BrowserRouter as Router, Route} from "react-router-dom";

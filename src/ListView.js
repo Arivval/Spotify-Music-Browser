@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
-import SearchBar from './SearchBar.js';
 import 'semantic-ui-css/semantic.min.css'
-import {Button, Gri, List, Image, Segment} from 'semantic-ui-react';
-import logo from './logo.svg';
-import qs from 'qs';
+import { List, Image } from 'semantic-ui-react';
 import './App.css';
 import './Utility.css';
 import APIManager from './APIManager.js';
-import SearchMenu from './SearchMenu.js';
-import {BrowserRouter as Router, Route} from "react-router-dom";
 import axios from 'axios';
 
 // now we got to request the API in our list view
