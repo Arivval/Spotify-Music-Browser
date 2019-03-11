@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "e8c322de9658cbeb8a774b6624167c2c",
-    "url": "/rkmp2Test/static/media/brand-icons.e8c322de.woff2"
+    "revision": "faff92145777a3cbaf8e7367b4807987",
+    "url": "/rkmp2Test/static/media/icons.faff9214.woff"
   },
   {
-    "revision": "770e61d26ef0e0e165b6",
+    "revision": "bdeb4d6aa4c1d9334ed7",
     "url": "/rkmp2Test/static/css/main.01ed659a.chunk.css"
   },
   {
@@ -12,12 +12,12 @@ self.__precacheManifest = [
     "url": "/rkmp2Test/static/js/runtime~main.6767087c.js"
   },
   {
-    "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
-    "url": "/rkmp2Test/static/media/logo.5d5d9eef.svg"
+    "revision": "a1a749e89f578a49306ec2b055c073da",
+    "url": "/rkmp2Test/static/media/brand-icons.a1a749e8.svg"
   },
   {
-    "revision": "be188c89515ec8905c01",
-    "url": "/rkmp2Test/static/js/2.be188c89.chunk.js"
+    "revision": "a4e5cab72473fced5744",
+    "url": "/rkmp2Test/static/js/2.a4e5cab7.chunk.js"
   },
   {
     "revision": "cd6c777f1945164224dee082abaea03a",
@@ -26,6 +26,10 @@ self.__precacheManifest = [
   {
     "revision": "ef60a4f6c25ef7f39f2d25a748dbecfe",
     "url": "/rkmp2Test/static/media/outline-icons.ef60a4f6.woff"
+  },
+  {
+    "revision": "9c74e172f87984c48ddf5c8108cabe67",
+    "url": "/rkmp2Test/static/media/flags.9c74e172.png"
   },
   {
     "revision": "701ae6abd4719e9c2ada3535a497b341",
@@ -40,20 +44,16 @@ self.__precacheManifest = [
     "url": "/rkmp2Test/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "faff92145777a3cbaf8e7367b4807987",
-    "url": "/rkmp2Test/static/media/icons.faff9214.woff"
+    "revision": "bdeb4d6aa4c1d9334ed7",
+    "url": "/rkmp2Test/static/js/main.bdeb4d6a.chunk.js"
   },
   {
-    "revision": "770e61d26ef0e0e165b6",
-    "url": "/rkmp2Test/static/js/main.770e61d2.chunk.js"
+    "revision": "e8c322de9658cbeb8a774b6624167c2c",
+    "url": "/rkmp2Test/static/media/brand-icons.e8c322de.woff2"
   },
   {
     "revision": "a046592bac8f2fd96e994733faf3858c",
     "url": "/rkmp2Test/static/media/brand-icons.a046592b.woff"
-  },
-  {
-    "revision": "9c74e172f87984c48ddf5c8108cabe67",
-    "url": "/rkmp2Test/static/media/flags.9c74e172.png"
   },
   {
     "revision": "8e3c7f5520f5ae906c6cf6d7f3ddcd19",
@@ -80,15 +80,11 @@ self.__precacheManifest = [
     "url": "/rkmp2Test/static/media/icons.962a1bf3.svg"
   },
   {
-    "revision": "a1a749e89f578a49306ec2b055c073da",
-    "url": "/rkmp2Test/static/media/brand-icons.a1a749e8.svg"
-  },
-  {
-    "revision": "be188c89515ec8905c01",
+    "revision": "a4e5cab72473fced5744",
     "url": "/rkmp2Test/static/css/2.3f68a92b.chunk.css"
   },
   {
-    "revision": "8e739bf9293a693d92ea9b57d642fcdc",
+    "revision": "0e1000553e1253a3fa57592b2d142aad",
     "url": "/rkmp2Test/index.html"
   }
 ];
