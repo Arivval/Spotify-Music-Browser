@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Spotfiy-Music-Browser/precache-manifest.efa0e21d63fc708e97b596b168c4f94f.js"
+  "/Spotfiy-Music-Browser/precache-manifest.81d620941c516682f8af83a9463b39fa.js"
 );
 
 workbox.clientsClaim();
