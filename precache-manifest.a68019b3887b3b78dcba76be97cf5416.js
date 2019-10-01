@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/Spotify-Music-Browser/static/media/icons.faff9214.woff"
   },
   {
-    "revision": "0e1aed9d813ee1c81d52",
+    "revision": "d639d62f0f151d357fc5",
     "url": "/Spotify-Music-Browser/static/css/main.3cc533ae.chunk.css"
   },
   {
@@ -44,8 +44,8 @@ self.__precacheManifest = [
     "url": "/Spotify-Music-Browser/static/media/icons.0ab54153.woff2"
   },
   {
-    "revision": "0e1aed9d813ee1c81d52",
-    "url": "/Spotify-Music-Browser/static/js/main.0e1aed9d.chunk.js"
+    "revision": "d639d62f0f151d357fc5",
+    "url": "/Spotify-Music-Browser/static/js/main.d639d62f.chunk.js"
   },
   {
     "revision": "e8c322de9658cbeb8a774b6624167c2c",
@@ -60,12 +60,12 @@ self.__precacheManifest = [
     "url": "/Spotify-Music-Browser/static/media/icons.8e3c7f55.eot"
   },
   {
-    "revision": "13db00b7a34fee4d819ab7f9838cc428",
-    "url": "/Spotify-Music-Browser/static/media/brand-icons.13db00b7.eot"
-  },
-  {
     "revision": "b87b9ba532ace76ae9f6edfe9f72ded2",
     "url": "/Spotify-Music-Browser/static/media/icons.b87b9ba5.ttf"
+  },
+  {
+    "revision": "13db00b7a34fee4d819ab7f9838cc428",
+    "url": "/Spotify-Music-Browser/static/media/brand-icons.13db00b7.eot"
   },
   {
     "revision": "c5ebe0b32dc1b5cc449a76c4204d13bb",
@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/Spotify-Music-Browser/static/css/2.79e5ea48.chunk.css"
   },
   {
-    "revision": "db62395bce50edfab6b15d72598b86bf",
+    "revision": "5992f1ea619b990ea6ba684cb5045e06",
     "url": "/Spotify-Music-Browser/index.html"
   }
 ];
