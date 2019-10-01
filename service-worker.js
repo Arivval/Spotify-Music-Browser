@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Spotfiy-Music-Browse/precache-manifest.92a90a22a4ff874239fddb45d30c3dae.js"
+  "/Spotfiy-Music-Browser/precache-manifest.4bc2d999811cdde24193eb6aa8c58764.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/Spotfiy-Music-Browse/index.html", {
+workbox.routing.registerNavigationRoute("/Spotfiy-Music-Browser/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
