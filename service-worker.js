@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Spotfiy-Music-Browser/precache-manifest.81d620941c516682f8af83a9463b39fa.js"
+  "/Spotify-Music-Browser/precache-manifest.578f3fa551d6e7c37b9464ca5dee96d3.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/Spotfiy-Music-Browser/index.html", {
+workbox.routing.registerNavigationRoute("/Spotify-Music-Browser/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
