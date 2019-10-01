@@ -46,18 +46,18 @@ class App extends Component {
               <div className="MainViewDiv">
 
                 <div className="FillParent">
-                  {/*<Route exact path="/rkmp2Test" component={LibraryPage}/>*/}
-                  <Route exact path="/rkmp2Test" render={(props) =>
+                  {/*<Route exact path="/Spotify-Music-Browser" component={LibraryPage}/>*/}
+                  <Route exact path="/Spotify-Music-Browser" render={(props) =>
                     < LibraryPage {
                                     ...props
                                   }
                                   updateToken={
                                     this.updateToken
                                   }/>}/>
-                  <Route path="/rkmp2Test/search" component={SearchPage}/>
-                  <Route path="/rkmp2Test/new" component={HomePage}/>
-                  <Route path="/rkmp2Test/detail/album" component={DetailPage}/>
-                  <Route path="/rkmp2Test/detail/playlist" component={PlayListDetailPage}/>
+                  <Route path="/Spotify-Music-Browser/search" component={SearchPage}/>
+                  <Route path="/Spotify-Music-Browser/new" component={HomePage}/>
+                  <Route path="/Spotify-Music-Browser/detail/album" component={DetailPage}/>
+                  <Route path="/Spotify-Music-Browser/detail/playlist" component={PlayListDetailPage}/>
 
                 </div>
 
@@ -76,18 +76,18 @@ class App extends Component {
           <div className="MainViewDiv">
 
             <div className="FillParent">
-              {/*<Route exact path="/rkmp2Test" component={LibraryPage}/>*/}
-              <Route exact path="/rkmp2Test" render={(props) =>
+              {/*<Route exact path="/Spotify-Music-Browser" component={LibraryPage}/>*/}
+              <Route exact path="/Spotify-Music-Browser" render={(props) =>
                 < LibraryPage {
                                 ...props
                               }
                               updateToken={
                                 this.updateToken
                               }/>}/>
-              <Route path="/rkmp2Test/search" component={SearchPage}/>
-              <Route path="/rkmp2Test/new" component={HomePage}/>
-              <Route path="/rkmp2Test/detail/album" component={DetailPage}/>
-              <Route path="/rkmp2Test/detail/playlist" component={PlayListDetailPage}/>
+              <Route path="/Spotify-Music-Browser/search" component={SearchPage}/>
+              <Route path="/Spotify-Music-Browser/new" component={HomePage}/>
+              <Route path="/Spotify-Music-Browser/detail/album" component={DetailPage}/>
+              <Route path="/Spotify-Music-Browser/detail/playlist" component={PlayListDetailPage}/>
 
             </div>
 

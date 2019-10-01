@@ -28,14 +28,14 @@ class SearchPage extends Component {
   // if force is false, we need to throttle the API call
   searchCallBack(val, force) {
     if (force || APIManager.throttleAPI()) {
-      this.props.history.push('/rkmp2Test/search/?' + encodeURIComponent(val));
+      this.props.history.push('/Spotify-Music-Browser/search/?' + encodeURIComponent(val));
       this.setState({searchText: val});
     }
   }
 
   detailViewCallBack(idx) {
     APIManager.setAblumIdx(idx);
-    this.props.history.push('/rkmp2Test/detail/album');
+    this.props.history.push('/Spotify-Music-Browser/detail/album');
 
   }
 

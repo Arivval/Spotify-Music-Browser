@@ -77,7 +77,7 @@ class LibraryPage extends Component {
   handleClick(index) {
     APIManager.setPlayList(this.state.responsePlayLists);
     APIManager.setPlayListIndex(index);
-    this.props.history.push('/rkmp2Test/detail/playlist');
+    this.props.history.push('/Spotify-Music-Browser/detail/playlist');
 
   }
 
