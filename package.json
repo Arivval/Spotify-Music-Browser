@@ -6,7 +6,7 @@
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.1.4",
     "awesome-debounce-promise": "^2.1.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "debounce": "^1.2.0",
     "gh-pages": "^2.0.1",
     "moment": "^2.24.0",
